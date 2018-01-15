@@ -33,4 +33,5 @@ gt: 1
         <td>EPN</td>
         <td>Médiathèque</td>
       </tr>
+  </table>
 </div>
