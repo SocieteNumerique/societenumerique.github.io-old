@@ -1,1 +1,22 @@
+title: Mission Société Numérique
+description: Stratégie nationale pour un numérique inclusif
+author: Mission Société Numérique
 theme: jekyll-theme-cayman
+twitter:
+  username: MissionSoNum
+social:
+  links:
+    - https://twitter.com/MissionSoNum
+    - https://github.com/SocieteNumerique
+google_site_verification:
+lang: fr_FR
+
+markdown: kramdown
+
+collections:
+  projects:
+    output: true
+
+plugins:
+    - jekyll-seo-tag
+    - jekyll-sitemap
