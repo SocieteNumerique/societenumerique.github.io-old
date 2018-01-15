@@ -1,9 +1,15 @@
 ---
-layout: livrable
+layout: default
 ---
 
+<h1>Stratégie d'inclusion numérique</h1>
+
 <div>
-  {% for item in site.livrables %}
-    <p>{{ item.description }}</p>
-  {% endfor %}
+  
+{% for item in site.livrables %}
+  <h2>{{ item.titre }}</h2>
+  <p>{{ item.description }}</p>
+  <p><a href="{{ item.url }}">{{ item.titre }}</a></p>
+{% endfor %}
+  
 </div>
