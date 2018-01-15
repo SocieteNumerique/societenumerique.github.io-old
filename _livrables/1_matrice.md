@@ -18,20 +18,20 @@ gt: 1
     <thead>
       <tr>
         <th class="text-center">Personnes cibles <br> \ <br> Territoires cibles</th>
-        <th>Personne 1</th>
-        <th>Personne 2</th>
+        <th>Groupe 1</th>
+        <th>Groupe 2</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <th scope="row">Territoire 1</th>
-        <td>Mairie</td>
-        <td>Mairie</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
       <tr>
         <th scope="row">Territoire 2</th>
-        <td>EPN</td>
-        <td>Médiathèque</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
     </tbody>
   </table>
