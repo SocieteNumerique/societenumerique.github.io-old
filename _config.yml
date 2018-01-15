@@ -14,7 +14,7 @@ lang: fr_FR
 markdown: kramdown
 
 collections:
-  projects:
+  livrables:
     output: true
 
 plugins:
