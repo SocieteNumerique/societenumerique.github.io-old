@@ -8,6 +8,22 @@ gt: 1
 Matrice avec double entrée personnes / territoires qui identifie les points d’entrée pour atteindre ces personnes
 
 <table class="table table-bordered">
-| <b>Personnes cibles <br> Territoires cible</b> | Personne 1 |
-| Territoire 1 | Mairie <br> CCAS |
+  <thead>
+    <tr>
+      <th>Personnes cibles <br> Territoires cibles</th>
+      <th>Personne 1</th>
+      <th>Personne 1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Territoire 1</th>
+      <td>Mairie</td>
+      <td>Mairie</td>
+    </tr>
+    <tr>
+      <th scope="row">Territoire 2</th>
+      <td>EPN</td>
+      <td>Médiathèque</td>
+    </tr>
 </table>
