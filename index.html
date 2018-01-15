@@ -9,7 +9,7 @@ layout: default
 {% for item in site.livrables %}
   <h2>{{ item.titre }}</h2>
   <p>{{ item.description }}</p>
-  <p><a href="{{ item.url }}">{{ item.titre }}</a></p>
+  <p><a href="{{ site.url }}/{{ item.url }}">{{ item.titre }}</a></p>
 {% endfor %}
   
 </div>
