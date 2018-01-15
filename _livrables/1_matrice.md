@@ -10,7 +10,7 @@ gt: 1
 <div>
   <p><b>Objectif</b> : élaborer une typologie des situations d’exclusion numérique</p>
   <p><b>Livrable</b> : concevoir une matrice avec double entrée personnes / territoires qui identifie les points d’entrée pour atteindre ces personnes.</p>
-   <p><b>Discussions</b> : voir la [plateforme](https://strategie.societenumerique.gouv.fr/topic/17/1-1-matrice-des-situations-d-exclusion-num%C3%A9rique).</p>
+   <p><b>Discussions</b> : voir la <a href="https://strategie.societenumerique.gouv.fr/topic/17/1-1-matrice-des-situations-d-exclusion-num%C3%A9rique">plateforme</a>.</p>
 </div>
 
 <div>
