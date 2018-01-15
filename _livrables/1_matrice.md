@@ -20,6 +20,7 @@ gt: 1
         <th class="text-center">Personnes cibles <br> \ <br> Territoires cibles</th>
         <th>Groupe 1</th>
         <th>Groupe 2</th>
+        <th>Personnes âgées</th>
       </tr>
     </thead>
     <tbody>
@@ -27,11 +28,19 @@ gt: 1
         <th scope="row">Territoire 1</th>
         <td>-</td>
         <td>-</td>
+        <td>-</td>
       </tr>
       <tr>
         <th scope="row">Territoire 2</th>
         <td>-</td>
         <td>-</td>
+        <td>-</td>
+      </tr>      
+      <tr>
+        <th scope="row">Territoires ruraux</th>
+        <td>-</td>
+        <td>-</td>
+        <td>Mairies</td>
       </tr>
     </tbody>
   </table>
