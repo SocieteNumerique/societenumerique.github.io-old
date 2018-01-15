@@ -7,5 +7,7 @@ gt: 1
 
 Matrice avec double entrée personnes / territoires qui identifie les points d’entrée pour atteindre ces personnes
 
+<table class="table">
 | <b>Personnes cibles <br> Territoires cible</b> | Personne 1 |
 | Territoire 1 | Mairie <br> CCAS |
+</table>
