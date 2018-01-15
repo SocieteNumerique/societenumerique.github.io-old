@@ -10,9 +10,9 @@ Matrice avec double entrÃ©e personnes / territoires qui identifie les points dâ€
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>Personnes cibles <br> \ <br> Territoires cibles</th>
+      <th class="text-center">Personnes cibles <br> \ <br> Territoires cibles</th>
       <th>Personne 1</th>
-      <th>Personne 1</th>
+      <th>Personne 2</th>
     </tr>
   </thead>
   <tbody>
