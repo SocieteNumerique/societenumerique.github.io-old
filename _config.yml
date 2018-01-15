@@ -14,6 +14,7 @@ markdown: kramdown
 collections:
     livrables:
         output: true
+        permalink: /:name
 
 plugins:
     - jekyll-seo-tag
