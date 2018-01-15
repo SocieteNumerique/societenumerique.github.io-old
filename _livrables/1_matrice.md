@@ -10,7 +10,7 @@ Matrice avec double entrée personnes / territoires qui identifie les points d�
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>Personnes cibles <br> Territoires cibles</th>
+      <th>Personnes cibles <br> \ <br> Territoires cibles</th>
       <th>Personne 1</th>
       <th>Personne 1</th>
     </tr>
@@ -26,4 +26,3 @@ Matrice avec double entrée personnes / territoires qui identifie les points d�
       <td>EPN</td>
       <td>Médiathèque</td>
     </tr>
-</table>
