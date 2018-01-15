@@ -1,3 +1,9 @@
-{% for item in site.livrables %}
-  <p>{{ item.description }}</p>
-{% endfor %}
+---
+layout: livrable
+---
+
+<div>
+  {% for item in site.livrables %}
+    <p>{{ item.description }}</p>
+  {% endfor %}
+</div>
