@@ -1,17 +1,18 @@
 ---
 layout: livrable
 titre: Mindmap
-description: Matrice des situations d'exclusion numérique.
+description: Cartographie des nouvelles pistes à explorer et de nouvelles modalités d’action publique.
 gt: 3
 ---
 
-<h1>Matrice des situations d'exclusion numérique.</h1>
+<h1>Cartographie des nouvelles pistes à explorer et de nouvelles modalités d’action publique.</h1>
 
 <div class="jumbotron">
-  <p><b>Objectif</b> : élaborer une typologie des situations d’exclusion numérique</p>
-  <p><b>Livrable</b> : concevoir une matrice avec double entrée personnes / territoires qui identifie les points d’entrée pour atteindre ces personnes.</p>
-   <p><b>Discussions</b> : voir la <a href="https://strategie.societenumerique.gouv.fr/topic/17/1-1-matrice-des-situations-d-exclusion-num%C3%A9rique">plateforme</a>.</p>
+  <p><b>Objectif</b> : documenter les réflexions portant sur la diversité des modes d'action publiques, de partenariats pour un financement plus efficace et plus aligné sur les besoins des acteurs de l'inclusion numérique.</p>
+   <p><b>Discussions</b> : voir la <a href="https://strategie.societenumerique.gouv.fr/topic/31/cartographie-des-nouvelles-pistes-%C3%A0-explorer-et-de-nouvelles-modalit%C3%A9s-d-action-publique">plateforme</a>.</p>
 </div>
+
+
 
 <style>
 
