@@ -65,7 +65,8 @@ rect.parent,
 </style>
 
 
-<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script></script>
+<body>
+<script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
 var margin = {top: 20, right: 0, bottom: 0, left: 0},
