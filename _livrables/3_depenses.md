@@ -329,7 +329,7 @@ if (window.location.hash === "") {
         if (!err) {
             console.log(res);
             var data = d3.nest().key(function(d) { return d.region; }).key(function(d) { return d.subregion; }).entries(res);
-            main({title: "Dépense 2016 pour la médiation numérique."}, {key: "Total", values: data});
+            main({title: "Dépense 2016 pour la médiation numérique (en €)"}, {key: "Total", values: data});
         }
     });
 }
