@@ -15,11 +15,9 @@ gt: 3
 
 
 <style>
-
 #chart {
-  width: 960px;
-  height: 500px;
-  background: #ddd;
+  max-width: 100%;
+  overflow:auto;
 }
 
 text {
@@ -31,8 +29,8 @@ text {
 }
 
 rect {
-  fill: none;
   stroke: #fff;
+  stroke-width: 1px;
 }
 
 rect.parent,
@@ -40,12 +38,8 @@ rect.parent,
   stroke-width: 2px;
 }
 
-.grandparent rect {
-  fill: orange;
-}
-
 .grandparent:hover rect {
-  fill: #ee9700;
+  fill: darkgrey;
 }
 
 .children rect.parent,
@@ -53,198 +47,344 @@ rect.parent,
   cursor: pointer;
 }
 
+.children rect.child {
+  opacity: 0;
+}
+
 .children rect.parent {
-  fill: #bbb;
-  fill-opacity: .5;
 }
 
 .children:hover rect.child {
-  fill: #bbb;
+  opacity: 1;
+  stroke-width: 1px;
+}
+
+.children:hover rect.parent {
+  opacity: 0;
+}
+
+.legend {
+  margin-bottom:8px !important;
+}
+
+.legend rect {
+  stroke-width: 0px;
+}
+
+.legend text {
+  text-anchor: middle;
+  pointer-events: auto;
+  font-size: 13px;
+  font-family: sans-serif;
+  fill: black;
+}
+
+.form-group {
+	text-align:left;
+}
+
+.textdiv {
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    padding: 7px;
+	cursor: pointer;
+	overflow:none;
+}
+
+.textdiv .title {
+    font-size: 102%;
+    font-weight: bold;
+    margin-top: 8px;
+	font-size:11px !important;
+}
+
+.textdiv p{
+	line-height: 13px;
+	margin:0 0 4px !important;
+	padding:0px;
+	font-size:10px !important;
 }
 
 </style>
 
+<p id="chart"></p>
 
-<body>
-<script src="//d3js.org/d3.v3.min.js"></script>
-<script>
+<div class="col-md-23 legend" style="margin-top:-10px;margin-bottom:0px;">
+	<strong>Title Legend</strong>
+	<div id="legend"></div>
+</div>
 
-var margin = {top: 20, right: 0, bottom: 0, left: 0},
-    width = 960,
-    height = 500 - margin.top - margin.bottom,
-    formatNumber = d3.format(",d"),
-    transitioning;
+<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+<script type="text/javascript">
 
-var x = d3.scale.linear()
-    .domain([0, width])
-    .range([0, width]);
+	// Largeur de la width
+	var obj = document.getElementById('chart');
+	var divWidth = obj.offsetWidth;
 
-var y = d3.scale.linear()
-    .domain([0, height])
-    .range([0, height]);
+	var margin = {top: 30, right: 0, bottom: 20, left: 0},
+		width = divWidth -25,
+		height = 540 - margin.top - margin.bottom,
+		formatNumber = d3.format(",%"),
+		colorDomain = [-.1, 0, .1],
+		colorRange = ['#dda8db', '#ebf2f7', '#9cbdd9'],
+		transitioning;
 
-var treemap = d3.layout.treemap()
-    .children(function(d, depth) { return depth ? null : d._children; })
-    .sort(function(a, b) { return a.value - b.value; })
-    .ratio(height / width * 0.5 * (1 + Math.sqrt(5)))
-    .round(false);
+	// sets x and y scale to determine size of visible boxes
+	var x = d3.scale.linear()
+		.domain([0, width])
+		.range([0, width]);
 
-var svg = d3.select("#chart").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.bottom + margin.top)
-    .style("margin-left", -margin.left + "px")
-    .style("margin.right", -margin.right + "px")
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-    .style("shape-rendering", "crispEdges");
+	var y = d3.scale.linear()
+		.domain([0, height])
+		.range([0, height]);
 
-var grandparent = svg.append("g")
-    .attr("class", "grandparent");
+	// adding a color scale
+	var color = d3.scale.linear()
+		.domain(colorDomain)
+		.range(colorRange);
 
-grandparent.append("rect")
-    .attr("y", -margin.top)
-    .attr("width", width)
-    .attr("height", margin.top);
+	// introduce color scale here
+	var treemap = d3.layout.treemap()
+		.children(function(d, depth) { return depth ? null : d._children; })
+		.sort(function(a, b) { return a.value - b.value; })
+		.ratio(height / width * 0.5 * (1 + Math.sqrt(5)))
+		.round(false);
 
-grandparent.append("text")
-    .attr("x", 6)
-    .attr("y", 6 - margin.top)
-    .attr("dy", ".75em");
+	var svg = d3.select("#chart").append("svg")
+		.attr("width", width + margin.left + margin.right)
+		.attr("height", height + margin.bottom + margin.top)
+		.style("margin-left", -margin.left + "px")
+		.style("margin.right", -margin.right + "px")
+	  .append("g")
+		.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+		.style("shape-rendering", "crispEdges");
 
-d3.json("https://societenumerique.github.io/strategie/flare.json", function(root) {
-  initialize(root);
-  accumulate(root);
-  layout(root);
-  display(root);
+	var grandparent = svg.append("g")
+		.attr("class", "grandparent");
 
-  function initialize(root) {
-    root.x = root.y = 0;
-    root.dx = width;
-    root.dy = height;
-    root.depth = 0;
-  }
+	grandparent.append("rect")
+		.attr("y", -margin.top)
+		.attr("width", width)
+		.attr("height", margin.top);
 
-  // Aggregate the values for internal nodes. This is normally done by the
-  // treemap layout, but not here because of our custom implementation.
-  // We also take a snapshot of the original children (_children) to avoid
-  // the children being overwritten when when layout is computed.
-  function accumulate(d) {
-    return (d._children = d.children)
-        ? d.value = d.children.reduce(function(p, v) { return p + accumulate(v); }, 0)
-        : d.value;
-  }
+	grandparent.append("text")
+		.attr("x", 6)
+		.attr("y", 6 - margin.top)
+		.attr("dy", ".75em");
+		
+	var legend = d3.select("#legend").append("svg")
+	  .attr("width", width + margin.left + margin.right)
+	  .attr("height", 30)
+	  .attr('class', 'legend')
+	  .selectAll("g")
+		  .data([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18])
+		  //.data([0,2,4,5,8,9,10,11,12,14,16,18])
+		  .enter()
+		  .append('g')
 
-  // Compute the treemap layout recursively such that each group of siblings
-  // uses the same size (1×1) rather than the dimensions of the parent cell.
-  // This optimizes the layout for the current zoom state. Note that a wrapper
-  // object is created for the parent node for each group of siblings so that
-  // the parent’s dimensions are not discarded as we recurse. Since each group
-  // of sibling was laid out in 1×1, we must rescale to fit using absolute
-  // coordinates. This lets us use a viewport to zoom.
-  function layout(d) {
-    if (d._children) {
-      treemap.nodes({_children: d._children});
-      d._children.forEach(function(c) {
-        c.x = d.x + c.x * d.dx;
-        c.y = d.y + c.y * d.dy;
-        c.dx *= d.dx;
-        c.dy *= d.dy;
-        c.parent = d;
-        layout(c);
-      });
-    }
-  }
+	// functions
+	function initialize(root) {
+		root.x = root.y = 0;
+		root.dx = width;
+		root.dy = height;
+		root.depth = 0;
+	  }
 
-  function display(d) {
-    grandparent
-        .datum(d.parent)
-        .on("click", transition)
-      .select("text")
-        .text(name(d));
+	  // Aggregate the values for internal nodes. This is normally done by the
+	  // treemap layout, but not here because of our custom implementation.
+	  // We also take a snapshot of the original children (_children) to avoid
+	  // the children being overwritten when when layout is computed.
+	  function accumulate(d) {
+		return (d._children = d.children)
+		  // recursion step, note that p and v are defined by reduce
+			? d.value = d.children.reduce(function(p, v) {return p + accumulate(v); }, 0)
+			: d.value;
+	  }
 
-    var g1 = svg.insert("g", ".grandparent")
-        .datum(d)
-        .attr("class", "depth");
+	  // Compute the treemap layout recursively such that each group of siblings
+	  // uses the same size (1×1) rather than the dimensions of the parent cell.
+	  // This optimizes the layout for the current zoom state. Note that a wrapper
+	  // object is created for the parent node for each group of siblings so that
+	  // the parent’s dimensions are not discarded as we recurse. Since each group
+	  // of sibling was laid out in 1×1, we must rescale to fit using absolute
+	  // coordinates. This lets us use a viewport to zoom.
+	  function layout(d) {
+		if (d._children) {
+		  // treemap nodes comes from the treemap set of functions as part of d3
+		  treemap.nodes({_children: d._children});
+		  d._children.forEach(function(c) {
+			c.x = d.x + c.x * d.dx;
+			c.y = d.y + c.y * d.dy;
+			c.dx *= d.dx;
+			c.dy *= d.dy;
+			c.parent = d;
+			// recursion
+			layout(c);
+		  });
+		}
+	  }
 
-    var g = g1.selectAll("g")
-        .data(d._children)
-      .enter().append("g");
+	function colorIncrements(d){
+		return (colorDomain[colorDomain.length - 1] - colorDomain[0])/18*d + colorDomain[0];
+	}
 
-    g.filter(function(d) { return d._children; })
-        .classed("children", true)
-        .on("click", transition);
+	legend.append("rect")
+		.attr("x", function(d){return margin.left + d * 35})
+		.attr("y", 0)
+		.attr("fill", function(d) {return color(colorIncrements(d))})
+		.attr('width', '35px')
+		.attr('height', '40px')
 
-    g.selectAll(".child")
-        .data(function(d) { return d._children || [d]; })
-      .enter().append("rect")
-        .attr("class", "child")
-        .call(rect);
+	legend.append("text")
+			.text(function(d){return formatNumber(colorIncrements(d))})
+			.attr('y', 20)
+			.attr('x', function(d){return margin.left + d * 35 + 20});
 
-    g.append("rect")
-        .attr("class", "parent")
-        .call(rect)
-      .append("title")
-        .text(function(d) { return formatNumber(d.value); });
+	// determines if white or black will be better contrasting color
+	function getContrast50(hexcolor){
+		return (parseInt(hexcolor.replace('#', ''), 16) > 0xffffff/3) ? 'black':'white';
+	}
 
-    g.append("text")
-        .attr("dy", ".75em")
-        .text(function(d) { return d.name; })
-        .call(text);
+	d3.json("budget-data.json", function(root) {
+	  console.log(root)
+	  initialize(root);
+	  accumulate(root);
+	  layout(root);
+	  display(root);
 
-    function transition(d) {
-      if (transitioning || !d) return;
-      transitioning = true;
+	  function display(d) {
+		grandparent
+			.datum(d.parent)
+			.on("click", transition)
+		    .select("text")
+			.text(name(d))
 
-      var g2 = display(d),
-          t1 = g1.transition().duration(750),
-          t2 = g2.transition().duration(750);
+		// color header based on grandparent's rate
+		grandparent
+		  .datum(d.parent)
+		  .select("rect")
+		  .attr("fill", function(){console.log(color(d.rate)); return color(d['rate'])})
 
-      // Update the domain only after entering new elements.
-      x.domain([d.x, d.x + d.dx]);
-      y.domain([d.y, d.y + d.dy]);
+		var g1 = svg.insert("g", ".grandparent")
+			.datum(d)
+			.attr("class", "depth");
 
-      // Enable anti-aliasing during the transition.
-      svg.style("shape-rendering", null);
+		var g = g1.selectAll("g")
+			.data(d._children)
+		    .enter().append("g");
 
-      // Draw child nodes on top of parent nodes.
-      svg.selectAll(".depth").sort(function(a, b) { return a.depth - b.depth; });
+		g.filter(function(d) { return d._children; })
+			.classed("children", true)
+			.on("click", transition);
 
-      // Fade-in entering text.
-      g2.selectAll("text").style("fill-opacity", 0);
+		g.selectAll(".child")
+			.data(function(d) { return d._children || [d]; })
+		  .enter().append("rect")
+			.attr("class", "child")
+			.call(rect);
 
-      // Transition to the new view.
-      t1.selectAll("text").call(text).style("fill-opacity", 0);
-      t2.selectAll("text").call(text).style("fill-opacity", 1);
-      t1.selectAll("rect").call(rect);
-      t2.selectAll("rect").call(rect);
+			
+		g.append("rect")
+			.attr("class", "parent")
+			.call(rect)
+		  .append("title");
+		
+		/* Adding a foreign object instead of a text object, allows for text wrapping */
+		g.append("foreignObject")
+				.call(rect)
+				/* open new window based on the json's URL value for leaf nodes */
+				/* Firefox displays this on top 
+				.on("click", function(d) { 
+					if(!d.children){
+						window.open(d.url); 
+				}
+			})*/
+			.attr("class","foreignobj")
+			.append("xhtml:div") 
+			.attr("dy", ".75em")
+			.html(function(d) { return '' +
+				' <p class="title"> ' + d.name + '</p>' + 
+				' <p> En 2014 : ' + d3.round(d.value,2) + ' Million(s) d\047euros </p>' + 
+				' <p> 2013/2014 : ' + formatNumber(d.rate); 
+				;})
+			.attr("class","textdiv"); //textdiv class allows us to style the text easily with CSS
 
-      // Remove the old node when the transition is finished.
-      t1.remove().each("end", function() {
-        svg.style("shape-rendering", "crispEdges");
-        transitioning = false;
-      });
-    }
+		function transition(d) {
+		  if (transitioning || !d) return;
+		  transitioning = true;
 
-    return g;
-  }
+		  var g2 = display(d),
+			  t1 = g1.transition().duration(650),
+			  t2 = g2.transition().duration(650);
 
-  function text(text) {
-    text.attr("x", function(d) { return x(d.x) + 6; })
-        .attr("y", function(d) { return y(d.y) + 6; });
-  }
+		  // Update the domain only after entering new elements.
+		  x.domain([d.x, d.x + d.dx]);
+		  y.domain([d.y, d.y + d.dy]);
 
-  function rect(rect) {
-    rect.attr("x", function(d) { return x(d.x); })
-        .attr("y", function(d) { return y(d.y); })
-        .attr("width", function(d) { return x(d.x + d.dx) - x(d.x); })
-        .attr("height", function(d) { return y(d.y + d.dy) - y(d.y); });
-  }
+		  // Enable anti-aliasing during the transition.
+		  svg.style("shape-rendering", null);
 
-  function name(d) {
-    return d.parent
-        ? name(d.parent) + "." + d.name
-        : d.name;
-  }
-});
+		  // Draw child nodes on top of parent nodes.
+		  svg.selectAll(".depth").sort(function(a, b) { return a.depth - b.depth; });
+
+		  // Fade-in entering text.
+		  g2.selectAll("text").style("fill-opacity", 0);
+		  g2.selectAll("foreignObject div").style("display", "none"); /*added*/
+
+		  // Transition to the new view.
+		  t1.selectAll("text").call(text).style("fill-opacity", 0);
+		  t2.selectAll("text").call(text).style("fill-opacity", 1);
+		  t1.selectAll("rect").call(rect);
+		  t2.selectAll("rect").call(rect);
+		  
+		  /* Foreign object */
+		  t1.selectAll(".textdiv").style("display", "none"); /* added */
+		  t1.selectAll(".foreignobj").call(foreign); /* added */
+		  t2.selectAll(".textdiv").style("display", "block"); /* added */
+		  t2.selectAll(".foreignobj").call(foreign); /* added */ 			
+
+		  // Remove the old node when the transition is finished.
+		  t1.remove().each("end", function() {
+			svg.style("shape-rendering", "crispEdges");
+			transitioning = false;
+		  });
+		}
+
+		return g;
+	  }
+
+  	function text(text) {
+		text.attr("x", function(d) { return x(d.x) + 6; })
+		.attr("y", function(d) { return y(d.y) + 6; });
+	}
+		
+	  function rect(rect) {
+		rect.attr("x", function(d) { return x(d.x); })
+			.attr("y", function(d) { return y(d.y); })
+			.attr("width", function(d) { return x(d.x + d.dx) - x(d.x); })
+			.attr("height", function(d) { return y(d.y + d.dy) - y(d.y); })
+			.attr("fill", function(d){return color(parseFloat(d.rate));});
+	  }
+
+	  function foreign(foreign){ /* added */
+			foreign.attr("x", function(d) { return x(d.x); })
+			.attr("y", function(d) { return y(d.y); })
+			.attr("width", function(d) { return x(d.x + d.dx) - x(d.x); })
+			.attr("height", function(d) { return y(d.y + d.dy) - y(d.y); });
+		}
+		
+	  function name(d) {
+		return d.parent
+			? "Budget du Département" + " - " + d.name + " -  Cliquez ici pour dézoomer"
+			: "Budget du Département - Cliquez pour zoomer";
+	  }
+	  
+	  function nameSave(d) {
+		return d.parent
+			? name(d.parent) + " - " + d.name + " -  Cliquez ici pour dézoomer"
+			: d.name;
+	  }
+	  
+	});
 
 </script>
