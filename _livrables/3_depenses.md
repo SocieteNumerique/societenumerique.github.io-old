@@ -245,7 +245,7 @@ rect.parent,
 		return (parseInt(hexcolor.replace('#', ''), 16) > 0xffffff/3) ? 'black':'white';
 	}
 
-	d3.json("budget-data.json", function(root) {
+	d3.json("https://societenumerique.github.io/strategie/budget-data.json", function(root) {
 	  console.log(root)
 	  initialize(root);
 	  accumulate(root);
