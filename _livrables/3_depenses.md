@@ -71,9 +71,9 @@ rect.parent {
 }
 
 </style>
-</head>
 
-<body>
+
+
 <div id="chart"></div>
 
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
@@ -335,5 +335,3 @@ if (window.location.hash === "") {
 }
 
 </script>
-</body>
-</html>
