@@ -10,6 +10,13 @@ gt: 3
 <div class="jumbotron">
   <p><b>Objectif</b> : Une première étape importante de ce chantier est d'estimer et de consolider les fonds mobilisables et mobilisés aujourd'hui. Afin de faciliter la collecte de donnée, nous prendrons en référence l'année 2016.</p>
    <p><b>Discussions</b> : voir la <a href="https://strategie.societenumerique.gouv.fr/topic/25/recensement-des-fonds-effectivement-d%C3%A9pens%C3%A9s-en-2016">plateforme</a>.</p>
+    <p>Acteur public, structure de médiation numérique, entreprise du secteur, opérateur,... ?</p>
+  <p>Vous pouvez nous aider en ajoutant vos données concernant les fonds que vous avez mis au budget et/ou dépensé en 2016 pour la mise en place d'actions relatives à l'inclusion numérique.</p>
+   <p><button type="button" class="btn btn-primary">Ajouter mes données</button></p>
+</div>
+
+<div class="alert alert-info" role="alert">
+  Ce livrable est en cours de construction.
 </div>
 
 <style>
