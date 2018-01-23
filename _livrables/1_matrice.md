@@ -45,3 +45,15 @@ gt: 1
     </tbody>
   </table>
 </div>
+
+
+<div>
+  <table class="table table-bordered">
+| Personnes cibles Territoires cibles | Personne 1  |   |   |   |
+|-------------------------------------|-------------|---|---|---|
+| Territoire 1                        | Mairie CCAS |   |   |   |
+|                                     |             |   |   |   |
+|                                     |             |   |   |   | 
+   
+  </table>
+</div>
