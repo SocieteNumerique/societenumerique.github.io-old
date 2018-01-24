@@ -27,31 +27,11 @@ gt: 1
     </tr>
     <tr>
       <td>Territoires ruraux</td>
-      <td>Mairie (via les maires mais surtout les secrétaires de mairie)</td>
+      <td>- Mairie (via les maires mais surtout les secrétaires de mairie)<br>- Aides à domicile (médicales et ménagères)<br>- Hôpitaux</td>
       <td></td>
       <td>Foyers ruraux</td>
       <td>Mairies</td>
       <td>Mairies</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Aides à domicile (médicales et ménagères)</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Hôpitaux</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
       <td></td>
       <td></td>
     </tr>
@@ -67,99 +47,19 @@ gt: 1
     </tr>
     <tr>
       <td>Territoires non précisés</td>
-      <td>Clubs (UNRPA, Ainés ruraux etc.)</td>
-      <td>CCAS</td>
-      <td>Comités Locaux pour le Logement Autonome des Jeunes (CLLAJ)</td>
+      <td>- Clubs (UNRPA, Ainés ruraux etc.)<br>- MFR<br>- Aidants (soignant.e.s, assisant.e.s de vie)<br>- Centres sociaux agréés par la CAF (+ de 2100 en France)<br>- Hôpitaux<br>- Structures medico-sociales<br>- EHPAD<br>- Bibliothèques- EPN<br>- Centres sociaux agréés par la CAF (+ de 2100 en France)</td>
+      <td>- CCAS<br>- Référents insertion<br>- Travailleurs sociaux- Missions locales<br>- Organismes de service public (CAF, Pole Emploi, MSA)- MSAP</td>
+      <td>- Comités Locaux pour le Logement Autonome des Jeunes (CLLAJ)<br>- Missions locales<br>- Services logements<br>- CCAS<br>- Foyers de jeunes travailleurs<br>- Points info jeunesse<br>- Structures médico-sociales<br>- Associations de jeunesse et d'éducation populaire (MJC)<br>- Auberges de jeunesse<br>- Centres de loisirs / assos sportives<br>- Amicales laïques<br>- Maisons des solidarités<br>- Lors de la JAPD<br>- École de la 2e chance<br>- EPIDE (Établissement Pour l'Insertion Dans l'Emploi)</td>
       <td></td>
       <td></td>
       <td></td>
-      <td>Hôpitaux</td>
-    </tr>
-    <tr>
-      <td>MFR</td>
-      <td>Référents insertion</td>
-      <td>Missions locales</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Structures médico-sociales</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Aidants (soignant.e.s, assisant.e.s de vie)</td>
-      <td>Travailleurs sociaux</td>
-      <td>Services logements</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Mairies</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Centres sociaux agréés par la CAF (+ de 2100 en France)</td>
-      <td>Missions locales</td>
-      <td>CCAS</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Lors du recensement</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Hôpitaux</td>
-      <td>Organismes de service public (CAF, Pole Emploi, MSA)</td>
-      <td>Foyers de jeunes travailleurs</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>PIMMS</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Structures medico-sociales</td>
-      <td>MSAP</td>
-      <td>Points info jeunesse</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>MSAP</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>EHPAD</td>
-      <td></td>
-      <td>Structures médico-sociales</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Espaces publics numériques (EPN)</td>
-      <td></td>
+      <td>- Hôpitaux<br>- Structures médico-sociales<br>- Mairies<br>- Lors du recensement<br>- PIMMS<br>- MSAP<br>- Espaces publics numériques (EPN)<br>- Centres sociaux agréés par la CAF</td>
     </tr>
     <tr>
       <td></td>
-      <td>Bibliothèques</td>
-      <td></td>
-      <td>Associations de jeunesse et d'éducation populaire (MJC)</td>
       <td></td>
       <td></td>
       <td></td>
-      <td>Centres sociaux agréés par la CAF</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>EPN</td>
-      <td></td>
-      <td>Auberges de jeunesse</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>Centres sociaux agréés par la CAF (+ de 2100 en France)</td>
-      <td></td>
-      <td>Centres de loisirs / assos sportives</td>
       <td></td>
       <td></td>
       <td></td>
@@ -169,17 +69,7 @@ gt: 1
       <td></td>
       <td></td>
       <td></td>
-      <td>Amicales laïques</td>
       <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>maisons des solidarités</td>
       <td></td>
       <td></td>
       <td></td>
@@ -189,17 +79,7 @@ gt: 1
       <td></td>
       <td></td>
       <td></td>
-      <td>Lors de la JAPD</td>
       <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Ecole de la 2e chance</td>
       <td></td>
       <td></td>
       <td></td>
@@ -209,7 +89,7 @@ gt: 1
       <td></td>
       <td></td>
       <td></td>
-      <td>EPIDE (Établissement Pour l'Insertion Dans l'Emploi)</td>
+      <td></td>
       <td></td>
       <td></td>
       <td></td>
