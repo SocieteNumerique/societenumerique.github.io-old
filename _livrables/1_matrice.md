@@ -14,7 +14,7 @@ gt: 1
 </div>
 
 <div>
-  <table class="table table-bordered">
+  <table class="table table-bordered table-striped">
     <tr>
       <th></th>
       <th>Personnes âgées</th>
