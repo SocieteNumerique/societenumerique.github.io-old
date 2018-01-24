@@ -10,12 +10,8 @@ layout: default
   
   <h2>{{ item.titre }}</h2>
   <p>{{ item.description }}</p>
-  <p><a href="{{ item.url }}">{{ item.titre }}</a></p>
-  
-  <p>https://societenumerique.github.io/strategie{{ item.url }}</p>
-  <p>https://societenumerique.github.io/strategie{{ item.path }}</p>
-  <p>https://societenumerique.github.io/strategie{{ item.relative_path }}</p>
-  
+  <p><a href="https://societenumerique.github.io/strategie{{ item.url }}">{{ item.titre }}</a></p>
+
 {% endfor %}
   
 </div>
