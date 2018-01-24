@@ -10,6 +10,8 @@ layout: default
   <h2>{{ item.titre }}</h2>
   <p>{{ item.description }}</p>
   <p><a href="{{ item.url }}">{{ item.titre }}</a></p>
+  <p><a href="{{ "/strategie" | item.url }}">{{ item.titre }}</a></p>
+  
 {% endfor %}
   
 </div>
