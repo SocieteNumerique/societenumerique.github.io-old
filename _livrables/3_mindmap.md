@@ -27,7 +27,8 @@ gt: 3
 }
 
 .node text {
-  font: 16px sans-serif;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1rem;
 }
 
 .link {
