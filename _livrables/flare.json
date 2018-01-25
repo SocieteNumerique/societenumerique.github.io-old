@@ -4,17 +4,17 @@
   {
    "name": "Identifier de nouvelles sources de financement",
    "children": [
-    {"name": "nouvelle source A"},
-    {"name": "nouvelle source B"},
-    {"name": "nouvelle source C"}
+    {"name": "Grands dématérialieurs"},
+    {"name": "Fondations identifiant l'inclusionnumérique dans leurs missions"},
+    {"name": "Entreprises privées du numérique"},
+    {"name": "Allocation de nouveaux fonds publics"}
    ]
   },
   {
    "name": "Identifier des dispositif d'attibution des fonds existants plus efficients",
    "children": [
-    {"name": "dispositif 1", "size": 17010},
-    {"name": "dispositif 2", "size": 5842},
-    {"name": "dispositif 3"}
+    {"name": "renforcer les synergies entre territoires"},
+    {"name": "renforcer les synergies entre acteurs de la médiation numérique"}
     
    ]
   },
