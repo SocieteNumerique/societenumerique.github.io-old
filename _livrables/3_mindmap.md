@@ -110,6 +110,7 @@ function update(source) {
       .attr("dy", ".35em")
       .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
       .text(function(d) { return d.name; })
+      .call(wrap, 150)
       .style("fill-opacity", 1e-6);
 
   // Transition nodes to their new position.
