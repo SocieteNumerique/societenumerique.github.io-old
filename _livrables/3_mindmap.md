@@ -122,7 +122,7 @@ function update(source) {
 
   nodeUpdate.select("circle")
       .attr("r", 4.5)
-      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+      .style("fill", function(d) { return d._children ? "#a174ac" : "#fff"; });
 
   nodeUpdate.select("text")
       .style("fill-opacity", 1);
