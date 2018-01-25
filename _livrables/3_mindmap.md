@@ -22,7 +22,7 @@ gt: 3
 
 .node circle {
   fill: #fff;
-  stroke: steelblue;
+  stroke: #a6328a;
   stroke-width: 1.5px;
 }
 
@@ -33,7 +33,7 @@ gt: 3
 
 .link {
   fill: none;
-  stroke: #ccc;
+  stroke: #21295e;
   stroke-width: 1.5px;
 }
 
