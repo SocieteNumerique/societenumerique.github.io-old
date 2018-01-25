@@ -27,7 +27,7 @@ gt: 3
 }
 
 .node text {
-  font: 10px sans-serif;
+  font: 16px sans-serif;
 }
 
 .link {
