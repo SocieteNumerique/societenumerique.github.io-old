@@ -6,23 +6,25 @@ layout: default
 
 <div>
 
-{% for item in site.livrables %}
+
 <!-- Grid row -->
 <div class="row">
-    <!-- Grid column -->
-    <div class="col-md-6 mb-r">
-      <div class="card default-color-dark">
-          <!--Card content-->
-          <div class="card-body text-center">
-              <!--Title-->
-              <h4 class="card-title white-text">{{ item.titre }}</h4>
-              <!--Text-->
-              <p class="card-text white-text">{{ item.description }}</p>
-              <a href="https://societenumerique.github.io/strategie{{ item.url }}" class="btn btn-outline-white btn-md waves-effect">{{ item.titre }}</a>
+    {% for item in site.livrables %}
+        <!-- Grid column -->
+        <div class="col-md-6 mb-r">
+          <div class="card default-color-dark">
+              <!--Card content-->
+              <div class="card-body text-center">
+                  <!--Title-->
+                  <h4 class="card-title white-text">{{ item.titre }}</h4>
+                  <!--Text-->
+                  <p class="card-text white-text">{{ item.description }}</p>
+                  <a href="https://societenumerique.github.io/strategie{{ item.url }}" class="btn btn-outline-white btn-md waves-effect">{{ item.titre }}</a>
+              </div>
           </div>
-      </div>
-    </div>
-  </div>
-{% endfor %}
+        </div>
+    {% endfor %}
+</div>
+
 
 </div>
