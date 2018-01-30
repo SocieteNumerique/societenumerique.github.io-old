@@ -5,13 +5,24 @@ layout: default
 <h1>Stratégie d'inclusion numérique</h1>
 
 <div>
-  
-{% for item in site.livrables %}
-  
-  <h2>{{ item.titre }}</h2>
-  <p>{{ item.description }}</p>
-  <p><a href="https://societenumerique.github.io/strategie{{ item.url }}">{{ item.titre }}</a></p>
 
+{% for item in site.livrables %}
+<!-- Grid row -->
+<div class="row">
+    <!-- Grid column -->
+    <div class="col-md-6 mb-r">
+      <div class="card default-color-dark">
+          <!--Card content-->
+          <div class="card-body text-center">
+              <!--Title-->
+              <h4 class="card-title white-text">{{ item.titre }}</h4>
+              <!--Text-->
+              <p class="card-text white-text">{{ item.description }}</p>
+              <a href="https://societenumerique.github.io/strategie{{ item.url }}" class="btn btn-outline-white btn-md waves-effect">{{ item.titre }}</a>
+          </div>
+      </div>
+    </div>
+  </div>
 {% endfor %}
-  
+
 </div>
